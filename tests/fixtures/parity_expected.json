@@ -1,0 +1,2440 @@
+{
+  "cases": [
+    {
+      "name": "greeting-basic",
+      "contact": "小雨",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小雨",
+          "text": "在吗"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "greeting",
+        "intent_label": "寒暄问候",
+        "confidence": 0.75,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在跟你重新搭上线, 重点是「想聊」, 还没说到具体的事。",
+        "goal": "确认你在不在, 顺便试探你有没有空陪聊。",
+        "advice": "先给个有温度的回应, 再抛一个问题把话头接住, 别只回「在」。",
+        "signals": [
+          "命中线索:在吗"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "小雨, 看到你消息我还挺开心的。最近怎么样, 有什么新鲜事跟我说说?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "小雨, 我在, 好久没聊了。你最近忙什么呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "小雨, 我在, 这两天手头事有点多。你先说事儿, 能帮的我尽量。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "在吗",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 75
+      }
+    },
+    {
+      "name": "greeting-long-time",
+      "contact": "小雨",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小雨",
+          "text": "你好啊，好久不见"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "greeting",
+        "intent_label": "寒暄问候",
+        "confidence": 0.89,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在跟你重新搭上线, 重点是「想聊」, 还没说到具体的事。",
+        "goal": "确认你在不在, 顺便试探你有没有空陪聊。",
+        "advice": "先给个有温度的回应, 再抛一个问题把话头接住, 别只回「在」。",
+        "signals": [
+          "命中线索:你好",
+          "命中线索:好久不见"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "小雨, 看到你消息我还挺开心的。最近怎么样, 有什么新鲜事跟我说说?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "小雨, 我在, 好久没聊了。你最近忙什么呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "小雨, 我在, 这两天手头事有点多。你先说事儿, 能帮的我尽量。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "你好啊，好久不见",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 89
+      }
+    },
+    {
+      "name": "greeting-ascii-hi",
+      "contact": "Amy",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "Amy",
+          "text": "hi"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "Amy",
+        "intent_key": "greeting",
+        "intent_label": "寒暄问候",
+        "confidence": 0.75,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在跟你重新搭上线, 重点是「想聊」, 还没说到具体的事。",
+        "goal": "确认你在不在, 顺便试探你有没有空陪聊。",
+        "advice": "先给个有温度的回应, 再抛一个问题把话头接住, 别只回「在」。",
+        "signals": [
+          "命中线索:hi"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "Amy, 看到你消息我还挺开心的。最近怎么样, 有什么新鲜事跟我说说?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "Amy, 我在, 好久没聊了。你最近忙什么呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "Amy, 我在, 这两天手头事有点多。你先说事儿, 能帮的我尽量。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "Amy",
+            "text": "hi",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 75
+      }
+    },
+    {
+      "name": "greeting-ascii-hello-word-boundary",
+      "contact": "Amy",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "Amy",
+          "text": "hello there"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "Amy",
+        "intent_key": "greeting",
+        "intent_label": "寒暄问候",
+        "confidence": 0.81,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在跟你重新搭上线, 重点是「想聊」, 还没说到具体的事。",
+        "goal": "确认你在不在, 顺便试探你有没有空陪聊。",
+        "advice": "先给个有温度的回应, 再抛一个问题把话头接住, 别只回「在」。",
+        "signals": [
+          "命中线索:hello"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "Amy, 看到你消息我还挺开心的。最近怎么样, 有什么新鲜事跟我说说?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "Amy, 我在, 好久没聊了。你最近忙什么呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "Amy, 我在, 这两天手头事有点多。你先说事儿, 能帮的我尽量。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "Amy",
+            "text": "hello there",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 81
+      }
+    },
+    {
+      "name": "smalltalk-weather",
+      "contact": "小林",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小林",
+          "text": "哈哈今天天气不错，刚下班"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小林",
+        "intent_key": "smalltalk",
+        "intent_label": "日常闲聊",
+        "confidence": 0.95,
+        "emotion_label": "明显正面",
+        "emotion_score": 1.0,
+        "urgency": "低",
+        "read": "对方就是来找你唠嗑的, 想要的是一来一回的热闹感。",
+        "goal": "找个人分享当下, 有人接话就开心。",
+        "advice": "顺着他的话往下接, 反问一个细节, 比给建议管用得多。",
+        "signals": [
+          "命中线索:哈哈",
+          "命中线索:天气",
+          "命中线索:刚下班",
+          "出现时间信息:今天"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "哈哈这个我也有同感, 你多说说, 我听着呢。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "听起来还挺有意思的, 后来呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "哈哈先记下了, 我这边在赶点事, 晚点接着跟你聊。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小林",
+            "text": "哈哈今天天气不错，刚下班",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "smalltalk-show",
+      "contact": "小林",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小林",
+          "text": "这个综艺太好笑了哈哈"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小林",
+        "intent_key": "smalltalk",
+        "intent_label": "日常闲聊",
+        "confidence": 0.85,
+        "emotion_label": "明显正面",
+        "emotion_score": 1.0,
+        "urgency": "低",
+        "read": "对方就是来找你唠嗑的, 想要的是一来一回的热闹感。",
+        "goal": "找个人分享当下, 有人接话就开心。",
+        "advice": "顺着他的话往下接, 反问一个细节, 比给建议管用得多。",
+        "signals": [
+          "命中线索:哈哈",
+          "命中线索:综艺"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "哈哈这个我也有同感, 你多说说, 我听着呢。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "听起来还挺有意思的, 后来呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "哈哈先记下了, 我这边在赶点事, 晚点接着跟你聊。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小林",
+            "text": "这个综艺太好笑了哈哈",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 85
+      }
+    },
+    {
+      "name": "venting-tired",
+      "contact": "小雨",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小雨",
+          "text": "最近真的好累，感觉快撑不住了"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "venting",
+        "intent_label": "情绪倾诉",
+        "confidence": 0.95,
+        "emotion_label": "明显负面",
+        "emotion_score": -1.0,
+        "urgency": "低",
+        "read": "对方正在情绪里, 现在最需要的是被理解, 不是被指导。",
+        "goal": "把情绪倒出来, 确认有人站在他这边。",
+        "advice": "先共情再说话, 千万别急着讲道理或者给解决方案。",
+        "signals": [
+          "命中线索:好累",
+          "命中线索:撑不住",
+          "命中线索:负面情绪词密集"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "听你这么说我也跟着揪心, 你已经扛很多了。想说什么都倒给我, 我在。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:这是对方此刻最想要的回应方式。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "这事换谁碰上都不好受。你先说说最卡的是哪一步, 我陪你捋一捋。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合对方情绪已经过去一半的时候。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我懂你现在不好受。不过我今天状态一般, 怕接不住太多情绪, 咱们晚点我认真听你说。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你此刻确实没精力承接情绪。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "最近真的好累，感觉快撑不住了",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "venting-long-text",
+      "contact": "小雨",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小雨",
+          "text": "今天真的特别难受，压力太大了，工作上的事一堆接一堆，感觉自己快扛不住了，晚上一个人待着的时候特别想哭，也不知道跟谁说，就觉得特别委屈特别累。"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "venting",
+        "intent_label": "情绪倾诉",
+        "confidence": 0.95,
+        "emotion_label": "明显负面",
+        "emotion_score": -1.0,
+        "urgency": "低",
+        "read": "对方正在情绪里, 现在最需要的是被理解, 不是被指导。",
+        "goal": "把情绪倒出来, 确认有人站在他这边。",
+        "advice": "先共情再说话, 千万别急着讲道理或者给解决方案。",
+        "signals": [
+          "命中线索:难受",
+          "命中线索:委屈",
+          "命中线索:压力",
+          "命中线索:想哭",
+          "命中线索:负面情绪词密集",
+          "命中线索:长段+负面",
+          "出现时间信息:今天"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "听你这么说我也跟着揪心, 你已经扛很多了。想说什么都倒给我, 我在。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:这是对方此刻最想要的回应方式。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "这事换谁碰上都不好受。你先说说最卡的是哪一步, 我陪你捋一捋。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合对方情绪已经过去一半的时候。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我懂你现在不好受。不过我今天状态一般, 怕接不住太多情绪, 咱们晚点我认真听你说。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你此刻确实没精力承接情绪。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "今天真的特别难受，压力太大了，工作上的事一堆接一堆，感觉自己快扛不住了，晚上一个人待着的时候特别想哭，也不知道跟谁说，就觉得特别委屈特别累。",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "comfort-seek",
+      "contact": "小雨",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小雨",
+          "text": "我是不是真的不行，没人懂我"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "comfort_seek",
+        "intent_label": "求安慰",
+        "confidence": 0.844,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在自我怀疑, 想要的是被肯定, 而不是被评判。",
+        "goal": "被肯定、被安慰, 确认自己没那么糟。",
+        "advice": "先给情绪一个落点, 再给一点点具体的肯定, 别泛泛地说「没事的」。",
+        "signals": [
+          "命中线索:我是不是",
+          "命中线索:没人懂我"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "抱抱, 你已经做得比自己以为的好很多了。别一个人硬撑, 我陪着你。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "别太苛责自己, 这事本来就不全是你的问题。先让自己缓一缓。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我在, 但我也没法替你把情绪全兜住。我们挑一件现在最想解决的小事, 先动起来, 好吗?",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "我是不是真的不行，没人懂我",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 84
+      }
+    },
+    {
+      "name": "ask-help",
+      "contact": "阿哲",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "阿哲",
+          "text": "能不能帮我看看这个方案，麻烦你了"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "阿哲",
+        "intent_key": "ask_help",
+        "intent_label": "求助请托",
+        "confidence": 0.944,
+        "emotion_label": "明显负面",
+        "emotion_score": -1.0,
+        "urgency": "低",
+        "read": "对方是有具体事要你出力, 这是实打实的请托, 不是闲聊。",
+        "goal": "让你出一份力或者给一个答案。",
+        "advice": "先答应「可以聊」, 再问清范围和截止时间, 别一口价全包。",
+        "signals": [
+          "命中线索:帮我",
+          "命中线索:帮我看",
+          "命中线索:帮我看看",
+          "命中线索:麻烦你",
+          "命中线索:能不能帮",
+          "命中线索:能不能帮我"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "行, 我来帮你看看。你先把具体情况说给我, 卡在哪一步?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我可以帮, 不过先跟你确认两件事: 时间来得及吗, 需要我做到哪一步?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "这次我可能真帮不上, 怕耽误你的事。你先按这个思路试试, 不行我们再想别的办法。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "阿哲",
+            "text": "能不能帮我看看这个方案，麻烦你了",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 94
+      }
+    },
+    {
+      "name": "question-money",
+      "contact": "小林",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小林",
+          "text": "请问这个多少钱？"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小林",
+        "intent_key": "question",
+        "intent_label": "信息咨询",
+        "confidence": 0.95,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在找答案, 把你当成了信息源, 期待一个明确回复。",
+        "goal": "拿到一个能用的答案或判断。",
+        "advice": "能确定就给结论, 不确定就直说不知道, 并告诉他去哪问更靠谱。",
+        "signals": [
+          "命中线索:多少钱",
+          "命中线索:多少",
+          "命中线索:请问"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "这个我正好知道一点, 我把我了解的都跟你说, 你看对不对得上。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我确认一下再给你准话。先说结论: 请问这个多少这块大概是这么回事, 你还想细到哪一层?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "这个我不是很有把握, 怕说错误导你。建议你找个更专业的渠道确认, 需要的话我帮你想怎么问。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小林",
+            "text": "请问这个多少钱？",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "invitation-weekend",
+      "contact": "小林",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小林",
+          "text": "周末那家新开的店，一起去吃吗"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小林",
+        "intent_key": "invitation",
+        "intent_label": "邀约见面",
+        "confidence": 0.744,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在约你, 想把你拉进一个具体的线下安排。",
+        "goal": "敲定你去不去、什么时候。",
+        "advice": "给答复要明确, 能去就顺手定时间地点, 去不了给个替代方案。",
+        "signals": [
+          "命中线索:一起",
+          "命中线索:时间信息:周末",
+          "出现时间信息:周末"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "好啊, 听着就来劲。周末我把时间留出来, 咱们定个大概点?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合你也想去, 想顺势把关系拉近。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "可以约。周末我这边方便, 地点你定还是我来定?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你想去但需要把安排敲定。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "最近我排得比较满, 周末可能悬。要不往后放放, 定下来我肯定到。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你这次去不了, 想留好关系。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小林",
+            "text": "周末那家新开的店，一起去吃吗",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 74
+      }
+    },
+    {
+      "name": "invitation-tomorrow",
+      "contact": "小林",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小林",
+          "text": "明天下午三点见面可以吗"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小林",
+        "intent_key": "invitation",
+        "intent_label": "邀约见面",
+        "confidence": 0.846,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在约你, 想把你拉进一个具体的线下安排。",
+        "goal": "敲定你去不去、什么时候。",
+        "advice": "给答复要明确, 能去就顺手定时间地点, 去不了给个替代方案。",
+        "signals": [
+          "命中线索:见面",
+          "命中线索:时间信息:明天",
+          "出现时间信息:明天"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "好啊, 听着就来劲。明天我把时间留出来, 咱们定个大概点?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合你也想去, 想顺势把关系拉近。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "可以约。明天我这边方便, 地点你定还是我来定?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你想去但需要把安排敲定。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "最近我排得比较满, 明天可能悬。要不往后放放, 定下来我肯定到。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你这次去不了, 想留好关系。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小林",
+            "text": "明天下午三点见面可以吗",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 85
+      }
+    },
+    {
+      "name": "plan-confirm",
+      "contact": "老同学",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "老同学",
+          "text": "到底定了没，给我个准信"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "老同学",
+        "intent_key": "plan_confirm",
+        "intent_label": "催确定行程",
+        "confidence": 0.95,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "中",
+        "read": "对方在等你的准话, 时间压力已经有点上来了。",
+        "goal": "尽快拿到一个明确答复, 好安排自己。",
+        "advice": "要么给准信, 要么给一个明确的时间点, 别用「再看」拖住对方。",
+        "signals": [
+          "命中线索:到底",
+          "命中线索:准信",
+          "命中线索:定了没"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "我在的, 别急, 咱们这就把它定下来。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我今晚之前给你准信, 你可以先按你方便的时候那边准备着。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我理解你着急, 但我现在真定不下来。给我到你方便的时候, 我一定回你一个明确答复。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "老同学",
+            "text": "到底定了没，给我个准信",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "plan-confirm-urgent",
+      "contact": "老同学",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "老同学",
+          "text": "急！马上给我答复"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "老同学",
+        "intent_key": "plan_confirm",
+        "intent_label": "催确定行程",
+        "confidence": 0.755,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "高",
+        "read": "对方在等你的准话, 时间压力已经有点上来了。",
+        "goal": "尽快拿到一个明确答复, 好安排自己。",
+        "advice": "要么给准信, 要么给一个明确的时间点, 别用「再看」拖住对方。",
+        "signals": [
+          "命中线索:答复"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "我在的, 别急, 咱们这就把它定下来。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我今晚之前给你准信, 你可以先按你方便的时候那边准备着。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我理解你着急, 但我现在真定不下来。给我到你方便的时候, 我一定回你一个明确答复。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "老同学",
+            "text": "急！马上给我答复",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 76
+      }
+    },
+    {
+      "name": "promotion-lying-earn",
+      "contact": "阿哲",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "阿哲",
+          "text": "这个副业能躺赚，限时名额，扫码进群"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "阿哲",
+        "intent_key": "promotion",
+        "intent_label": "推销广告",
+        "confidence": 0.95,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在向你推东西, 你们的关系此刻更像渠道和客户。",
+        "goal": "让你下单、进群、或者帮他转发。",
+        "advice": "态度客气但立场要清楚, 不想参与就一次说明白, 不留钩子。",
+        "signals": [
+          "命中线索:限时",
+          "命中线索:名额",
+          "命中线索:扫码",
+          "命中线索:躺赚",
+          "命中线索:副业",
+          "命中线索:疑似链接/二维码",
+          "消息里带链接或二维码, 像推广素材"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "谢谢你还想着我。不过这个我暂时用不上, 你也别为我特意留。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合关系不错, 只是这次不参与。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我先了解下, 但最近确实没这个需求。以后真要买我主动找你。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你还想留个商业上的口子。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "这类我确实不需要, 以后也不用特意发给我了, 咱们聊点别的。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合反复被推销、需要止损。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": true
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "阿哲",
+            "text": "这个副业能躺赚，限时名额，扫码进群",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "promotion-link",
+      "contact": "阿哲",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "阿哲",
+          "text": "https://example.com 点此领取优惠"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "阿哲",
+        "intent_key": "promotion",
+        "intent_label": "推销广告",
+        "confidence": 0.95,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在向你推东西, 你们的关系此刻更像渠道和客户。",
+        "goal": "让你下单、进群、或者帮他转发。",
+        "advice": "态度客气但立场要清楚, 不想参与就一次说明白, 不留钩子。",
+        "signals": [
+          "命中线索:优惠",
+          "命中线索:疑似链接/二维码",
+          "消息里带链接或二维码, 像推广素材"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "谢谢你还想着我。不过这个我暂时用不上, 你也别为我特意留。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合关系不错, 只是这次不参与。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我先了解下, 但最近确实没这个需求。以后真要买我主动找你。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你还想留个商业上的口子。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "这类我确实不需要, 以后也不用特意发给我了, 咱们聊点别的。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合反复被推销、需要止损。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": true
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "阿哲",
+            "text": "https://example.com 点此领取优惠",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "money-borrow",
+      "contact": "老同学",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "老同学",
+          "text": "兄弟能不能先借我两万周转一下，下个月还你"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "老同学",
+        "intent_key": "money",
+        "intent_label": "借钱谈钱",
+        "confidence": 0.85,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "中",
+        "read": "对方开口谈钱, 这是最容易伤关系、也最需要留证据的一类。",
+        "goal": "从你这拿到钱或者资金安排。",
+        "advice": "先问清数目和归还时间, 心里设一条底线, 借出去就当可能收不回。",
+        "signals": [
+          "命中线索:周转",
+          "命中线索:先借",
+          "出现时间信息:下个月"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "我知道你开口也挺难的。但我这边最近手头也紧, 钱上真帮不上, 别的能帮的我一定说。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合你不想伤感情、又不打算借。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "先跟我说下数目和大概什么时候能还? 我得看看自己这边能不能周转得开。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你还在权衡, 想先掌握信息。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "抱歉, 借钱这事我有原则, 朋友之间我不借。这个口子我不开, 你也别为难我。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你已经想好不借, 要一次说清。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": true
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "老同学",
+            "text": "兄弟能不能先借我两万周转一下，下个月还你",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 85
+      }
+    },
+    {
+      "name": "money-amount",
+      "contact": "老同学",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "老同学",
+          "text": "手头紧，能先借3万吗"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "老同学",
+        "intent_key": "money",
+        "intent_label": "借钱谈钱",
+        "confidence": 0.95,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "中",
+        "read": "对方开口谈钱, 这是最容易伤关系、也最需要留证据的一类。",
+        "goal": "从你这拿到钱或者资金安排。",
+        "advice": "先问清数目和归还时间, 心里设一条底线, 借出去就当可能收不回。",
+        "signals": [
+          "命中线索:手头紧",
+          "命中线索:先借",
+          "命中线索:出现金额",
+          "出现金额数字:3万"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "我知道你开口也挺难的。但我这边最近手头也紧, 钱上真帮不上, 别的能帮的我一定说。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合你不想伤感情、又不打算借。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "先跟我说下数目和大概什么时候能还? 我得看看自己这边能不能周转得开。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你还在权衡, 想先掌握信息。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "抱歉, 借钱这事我有原则, 朋友之间我不借。这个口子我不开, 你也别为难我。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你已经想好不借, 要一次说清。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": true
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "老同学",
+            "text": "手头紧，能先借3万吗",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "complaint",
+      "contact": "小满",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小满",
+          "text": "你怎么这样，太过分了，你从来不考虑我"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小满",
+        "intent_key": "complaint",
+        "intent_label": "抱怨指责",
+        "confidence": 0.914,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方带着情绪冲你来, 关系的张力已经出来了。",
+        "goal": "要一个说法, 或者要你认错、改变。",
+        "advice": "先别辩解, 把对方最在意的那一条拎出来单独回应, 一次只谈一件事。",
+        "signals": [
+          "命中线索:你怎么",
+          "命中线索:你从来",
+          "命中线索:太过分"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "你的感受我收到了, 是我没考虑到。我先跟你说声抱歉。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合你确实有做得不到位的地方。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "咱们把事说清楚: 你觉得最不舒服的是哪一点? 就着这一条聊。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你想把问题谈清楚而不是吵。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我可以听你说, 但这样的说话方式我不接受。咱们都冷静一下再谈。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合对方越界、言语攻击的时候。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小满",
+            "text": "你怎么这样，太过分了，你从来不考虑我",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 91
+      }
+    },
+    {
+      "name": "flirt",
+      "contact": "小雨",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小雨",
+          "text": "突然有点想你，在干嘛呀"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "flirt",
+        "intent_label": "暧昧示好",
+        "confidence": 0.89,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在往感情方向试探, 你们之间的关系可能要重新定义。",
+        "goal": "看你的反应, 确认有没有机会更进一步。",
+        "advice": "别被气氛推着走, 该接的接、该说的说清, 态度前后一致最重要。",
+        "signals": [
+          "命中线索:想你",
+          "命中线索:在干嘛呀"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "你这么说我有点开心, 也有点不好意思。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合你也有好感、想给回应。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "谢谢你的话, 我收到了。咱们慢慢处着看, 别急着定调子。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你还没想好、需要时间观察。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "你的心意我收到了。但我现在只当朋友, 别误会, 也别为难自己。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你只想做朋友、不想被误会。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "突然有点想你，在干嘛呀",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 89
+      }
+    },
+    {
+      "name": "apology",
+      "contact": "小雨",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小雨",
+          "text": "对不起，昨天是我不对，别生气了好吗"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "apology",
+        "intent_label": "道歉和解",
+        "confidence": 0.807,
+        "emotion_label": "明显负面",
+        "emotion_score": -1.0,
+        "urgency": "低",
+        "read": "对方主动低头, 想修复关系, 这是一个可以谈条件的窗口。",
+        "goal": "得到你的原谅, 把这件事翻篇。",
+        "advice": "原谅可以给, 但把你在意的边界一并说清, 别只图当下和气。",
+        "signals": [
+          "命中线索:对不起",
+          "命中线索:别生气"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "没事了, 我知道你不是故意的。咱们翻篇。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "你的道歉我接受。不过我希望下次遇到类似的事, 咱们能早点说开。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "道我收到了。但我需要点时间, 不是一句话就能过去的, 你理解一下。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "对不起，昨天是我不对，别生气了好吗",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 81
+      }
+    },
+    {
+      "name": "business",
+      "contact": "王总",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "王总",
+          "text": "我们这边有个项目想跟你合作，预算可以谈"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "王总",
+        "intent_key": "business",
+        "intent_label": "商务合作",
+        "confidence": 0.85,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "这是一次带商业目的的沟通, 对方在评估你, 你也在被定价。",
+        "goal": "推进合作, 或者摸你的底价和档期。",
+        "advice": "先问预算和交付标准再谈方案, 顺序反了后面很难谈。",
+        "signals": [
+          "命中线索:合作",
+          "命中线索:预算"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "听着挺对路的, 咱们可以聊。你先说说你的想法和预期。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "可以谈。为了效率我先列下需要确认的: 预算、时间、交付标准, 这三样清楚了好推进。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "这个方向我暂时不接。以后有合适的项目, 我再主动联系你。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "王总",
+            "text": "我们这边有个项目想跟你合作，预算可以谈",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 85
+      }
+    },
+    {
+      "name": "followup-nudge-multi",
+      "contact": "小满",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小满",
+          "text": "在吗"
+        },
+        {
+          "sender": "小满",
+          "text": "在吗在吗"
+        },
+        {
+          "sender": "小满",
+          "text": "你怎么一直不回我"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小满",
+        "intent_key": "followup_nudge",
+        "intent_label": "试探催回",
+        "confidence": 0.865,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "中",
+        "read": "对方在用追问的方式要你的注意力, 背后多半是没安全感。",
+        "goal": "让你尽快出现, 确认你还在意他。",
+        "advice": "安抚一句 + 说明节奏就够了, 别为每一次追问都停下来。",
+        "signals": [
+          "命中线索:在吗在吗(上文)",
+          "命中线索:反复追问在不在",
+          "连续追问在不在, 共 3 次",
+          "短消息连发, 节奏急"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "刚在忙没顾上回你, 别多想啊, 我看到了。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合对方只是没安全感, 关系还在。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我看到了, 手头收个尾就回你。有事直接说重点就行。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你想建立稳定的回复节奏。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我不太喜欢被追着问, 看到我会回。你不用一直盯着。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合对方追得太紧、开始影响你。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": true
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小满",
+            "text": "在吗",
+            "is_me": false
+          },
+          {
+            "sender": "小满",
+            "text": "在吗在吗",
+            "is_me": false
+          },
+          {
+            "sender": "小满",
+            "text": "你怎么一直不回我",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 86
+      }
+    },
+    {
+      "name": "followup-nudge-short-burst",
+      "contact": "小满",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小满",
+          "text": "在吗"
+        },
+        {
+          "sender": "小满",
+          "text": "人呢"
+        },
+        {
+          "sender": "小满",
+          "text": "在？"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小满",
+        "intent_key": "followup_nudge",
+        "intent_label": "试探催回",
+        "confidence": 0.714,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "中",
+        "read": "对方在用追问的方式要你的注意力, 背后多半是没安全感。",
+        "goal": "让你尽快出现, 确认你还在意他。",
+        "advice": "安抚一句 + 说明节奏就够了, 别为每一次追问都停下来。",
+        "signals": [
+          "命中线索:人呢(上文)",
+          "短消息连发, 节奏急"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "刚在忙没顾上回你, 别多想啊, 我看到了。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:适合对方只是没安全感, 关系还在。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我看到了, 手头收个尾就回你。有事直接说重点就行。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合你想建立稳定的回复节奏。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我不太喜欢被追着问, 看到我会回。你不用一直盯着。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合对方追得太紧、开始影响你。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": true
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小满",
+            "text": "在吗",
+            "is_me": false
+          },
+          {
+            "sender": "小满",
+            "text": "人呢",
+            "is_me": false
+          },
+          {
+            "sender": "小满",
+            "text": "在？",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 71
+      }
+    },
+    {
+      "name": "exclamation-dense",
+      "contact": "小林",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "小林",
+          "text": "太好笑了！！！"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小林",
+        "intent_key": "smalltalk",
+        "intent_label": "日常闲聊",
+        "confidence": 0.32,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方就是来找你唠嗑的, 想要的是一来一回的热闹感。",
+        "goal": "找个人分享当下, 有人接话就开心。",
+        "advice": "顺着他的话往下接, 反问一个细节, 比给建议管用得多。",
+        "signals": [
+          "感叹号密集, 情绪外露"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "哈哈这个我也有同感, 你多说说, 我听着呢。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "听起来还挺有意思的, 后来呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "哈哈先记下了, 我这边在赶点事, 晚点接着跟你聊。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小林",
+            "text": "太好笑了！！！",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 32
+      }
+    },
+    {
+      "name": "empty-input",
+      "contact": "好友",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "好友",
+          "text": ""
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "好友",
+        "intent_key": "smalltalk",
+        "intent_label": "日常闲聊",
+        "confidence": 0.32,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方就是来找你唠嗑的, 想要的是一来一回的热闹感。",
+        "goal": "找个人分享当下, 有人接话就开心。",
+        "advice": "顺着他的话往下接, 反问一个细节, 比给建议管用得多。",
+        "signals": [
+          "没有强线索, 按日常对话处理"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "哈哈这个我也有同感, 你多说说, 我听着呢。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "听起来还挺有意思的, 后来呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "哈哈先记下了, 我这边在赶点事, 晚点接着跟你聊。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "好友",
+            "text": "",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 32
+      }
+    },
+    {
+      "name": "context-inherit-venting",
+      "contact": "小雨",
+      "transcript": "小雨: 在吗\n小雨: 最近真的好累，感觉快撑不住了\n我: 怎么了\n小雨: 项目被砍了，我做了三个月的东西全白费\n小雨: 你能陪我说说话吗",
+      "messages": null,
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "venting",
+        "intent_label": "情绪倾诉",
+        "confidence": 0.88,
+        "emotion_label": "明显负面",
+        "emotion_score": -1.0,
+        "urgency": "低",
+        "read": "对方正在情绪里, 现在最需要的是被理解, 不是被指导。",
+        "goal": "把情绪倒出来, 确认有人站在他这边。",
+        "advice": "先共情再说话, 千万别急着讲道理或者给解决方案。",
+        "signals": [
+          "命中线索:好累(上文)",
+          "命中线索:撑不住(上文)",
+          "命中线索:整段对话偏负面"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "听你这么说我也跟着揪心, 你已经扛很多了。想说什么都倒给我, 我在。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:这是对方此刻最想要的回应方式。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "这事换谁碰上都不好受。你先说说最卡的是哪一步, 我陪你捋一捋。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合对方情绪已经过去一半的时候。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我懂你现在不好受。不过我今天状态一般, 怕接不住太多情绪, 咱们晚点我认真听你说。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你此刻确实没精力承接情绪。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "在吗",
+            "is_me": false
+          },
+          {
+            "sender": "小雨",
+            "text": "最近真的好累，感觉快撑不住了",
+            "is_me": false
+          },
+          {
+            "sender": "我",
+            "text": "怎么了",
+            "is_me": true
+          },
+          {
+            "sender": "小雨",
+            "text": "项目被砍了，我做了三个月的东西全白费",
+            "is_me": false
+          },
+          {
+            "sender": "小雨",
+            "text": "你能陪我说说话吗",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 88
+      }
+    },
+    {
+      "name": "context-with-me-lines",
+      "contact": "小林",
+      "transcript": "小林: 周末一起去爬山吗\n我: 看情况吧\n小林: 考虑得怎么样，给个话",
+      "messages": null,
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小林",
+        "intent_key": "plan_confirm",
+        "intent_label": "催确定行程",
+        "confidence": 0.883,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "中",
+        "read": "对方在等你的准话, 时间压力已经有点上来了。",
+        "goal": "尽快拿到一个明确答复, 好安排自己。",
+        "advice": "要么给准信, 要么给一个明确的时间点, 别用「再看」拖住对方。",
+        "signals": [
+          "命中线索:考虑得怎么样",
+          "命中线索:给个话"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "我在的, 别急, 咱们这就把它定下来。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我今晚之前给你准信, 你可以先按你方便的时候那边准备着。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我理解你着急, 但我现在真定不下来。给我到你方便的时候, 我一定回你一个明确答复。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小林",
+            "text": "周末一起去爬山吗",
+            "is_me": false
+          },
+          {
+            "sender": "我",
+            "text": "看情况吧",
+            "is_me": true
+          },
+          {
+            "sender": "小林",
+            "text": "考虑得怎么样，给个话",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 88
+      }
+    },
+    {
+      "name": "context-positive",
+      "contact": "小雨",
+      "transcript": "小雨: 我升职了\n小雨: 太开心了，谢谢你一直帮我",
+      "messages": null,
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "ask_help",
+        "intent_label": "求助请托",
+        "confidence": 0.75,
+        "emotion_label": "明显正面",
+        "emotion_score": 1.0,
+        "urgency": "低",
+        "read": "对方是有具体事要你出力, 这是实打实的请托, 不是闲聊。",
+        "goal": "让你出一份力或者给一个答案。",
+        "advice": "先答应「可以聊」, 再问清范围和截止时间, 别一口价全包。",
+        "signals": [
+          "命中线索:帮我"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "行, 我来帮你看看。你先把具体情况说给我, 卡在哪一步?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我可以帮, 不过先跟你确认两件事: 时间来得及吗, 需要我做到哪一步?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "这次我可能真帮不上, 怕耽误你的事。你先按这个思路试试, 不行我们再想别的办法。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "我升职了",
+            "is_me": false
+          },
+          {
+            "sender": "小雨",
+            "text": "太开心了，谢谢你一直帮我",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 75
+      }
+    },
+    {
+      "name": "context-noise-then-ask",
+      "contact": "阿哲",
+      "transcript": "阿哲: 哈哈\n阿哲: 在忙啥\n阿哲: 对了，能不能帮我改下简历",
+      "messages": null,
+      "expected": {
+        "engine": "heuristic",
+        "contact": "阿哲",
+        "intent_key": "ask_help",
+        "intent_label": "求助请托",
+        "confidence": 0.95,
+        "emotion_label": "明显正面",
+        "emotion_score": 1.0,
+        "urgency": "低",
+        "read": "对方是有具体事要你出力, 这是实打实的请托, 不是闲聊。",
+        "goal": "让你出一份力或者给一个答案。",
+        "advice": "先答应「可以聊」, 再问清范围和截止时间, 别一口价全包。",
+        "signals": [
+          "命中线索:帮我",
+          "命中线索:能不能帮",
+          "命中线索:能不能帮我"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "行, 我来帮你看看。你先把具体情况说给我, 卡在哪一步?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": false
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我可以帮, 不过先跟你确认两件事: 时间来得及吗, 需要我做到哪一步?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": true
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "这次我可能真帮不上, 怕耽误你的事。你先按这个思路试试, 不行我们再想别的办法。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "阿哲",
+            "text": "哈哈",
+            "is_me": false
+          },
+          {
+            "sender": "阿哲",
+            "text": "在忙啥",
+            "is_me": false
+          },
+          {
+            "sender": "阿哲",
+            "text": "对了，能不能帮我改下简历",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "window-venting-inherit",
+      "contact": "小雨",
+      "transcript": "小雨: 好累啊\n小雨: 压力好大，撑不住了\n小雨: 今天又被领导说了",
+      "messages": null,
+      "expected": {
+        "engine": "heuristic",
+        "contact": "小雨",
+        "intent_key": "venting",
+        "intent_label": "情绪倾诉",
+        "confidence": 0.95,
+        "emotion_label": "明显负面",
+        "emotion_score": -1.0,
+        "urgency": "低",
+        "read": "对方正在情绪里, 现在最需要的是被理解, 不是被指导。",
+        "goal": "把情绪倒出来, 确认有人站在他这边。",
+        "advice": "先共情再说话, 千万别急着讲道理或者给解决方案。",
+        "signals": [
+          "命中线索:好累(上文)",
+          "命中线索:压力(上文)",
+          "命中线索:撑不住(上文)",
+          "命中线索:整段对话偏负面",
+          "出现时间信息:今天"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "听你这么说我也跟着揪心, 你已经扛很多了。想说什么都倒给我, 我在。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。 适用场景:这是对方此刻最想要的回应方式。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "这事换谁碰上都不好受。你先说说最卡的是哪一步, 我陪你捋一捋。",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。 适用场景:适合对方情绪已经过去一半的时候。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我懂你现在不好受。不过我今天状态一般, 怕接不住太多情绪, 咱们晚点我认真听你说。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。 适用场景:适合你此刻确实没精力承接情绪。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "小雨",
+            "text": "好累啊",
+            "is_me": false
+          },
+          {
+            "sender": "小雨",
+            "text": "压力好大，撑不住了",
+            "is_me": false
+          },
+          {
+            "sender": "小雨",
+            "text": "今天又被领导说了",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 95
+      }
+    },
+    {
+      "name": "fallback-no-cue",
+      "contact": "好友",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "好友",
+          "text": "嗯"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "好友",
+        "intent_key": "smalltalk",
+        "intent_label": "日常闲聊",
+        "confidence": 0.32,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方就是来找你唠嗑的, 想要的是一来一回的热闹感。",
+        "goal": "找个人分享当下, 有人接话就开心。",
+        "advice": "顺着他的话往下接, 反问一个细节, 比给建议管用得多。",
+        "signals": [
+          "没有强线索, 按日常对话处理"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "哈哈这个我也有同感, 你多说说, 我听着呢。",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "听起来还挺有意思的, 后来呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "哈哈先记下了, 我这边在赶点事, 晚点接着跟你聊。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "好友",
+            "text": "嗯",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 32
+      }
+    },
+    {
+      "name": "default-contact",
+      "contact": "好友",
+      "transcript": null,
+      "messages": [
+        {
+          "sender": "好友",
+          "text": "在吗"
+        }
+      ],
+      "expected": {
+        "engine": "heuristic",
+        "contact": "好友",
+        "intent_key": "greeting",
+        "intent_label": "寒暄问候",
+        "confidence": 0.75,
+        "emotion_label": "中性",
+        "emotion_score": 0.0,
+        "urgency": "低",
+        "read": "对方在跟你重新搭上线, 重点是「想聊」, 还没说到具体的事。",
+        "goal": "确认你在不在, 顺便试探你有没有空陪聊。",
+        "advice": "先给个有温度的回应, 再抛一个问题把话头接住, 别只回「在」。",
+        "signals": [
+          "命中线索:在吗"
+        ],
+        "replies": [
+          {
+            "strategy": "warm",
+            "strategy_label": "情绪优先",
+            "text": "看到你消息我还挺开心的。最近怎么样, 有什么新鲜事跟我说说?",
+            "reason": "先接住对方的情绪和关系, 让对方觉得被看见, 防备心会降下来。",
+            "risk": "情绪投入大, 容易被对方持续依赖, 也容易把自己拖进耗能的关系里。",
+            "advantage": "关系升温最快, 对方的好感和信任会明显上升。",
+            "tone": "温和、有陪伴感",
+            "recommended": true
+          },
+          {
+            "strategy": "steady",
+            "strategy_label": "稳妥务实",
+            "text": "我在, 好久没聊了。你最近忙什么呢?",
+            "reason": "回应了对方真正要的那件事, 同时把信息补全, 避免空头承诺和来回拉扯。",
+            "risk": "偏理性, 如果对方当下只想要情绪, 可能会觉得你有点冷。",
+            "advantage": "边界清楚又留余地, 推进效率高, 事后不容易背锅。",
+            "tone": "坦率、把事情说清楚",
+            "recommended": false
+          },
+          {
+            "strategy": "boundary",
+            "strategy_label": "边界清晰",
+            "text": "我在, 这两天手头事有点多。你先说事儿, 能帮的我尽量。",
+            "reason": "先护住自己的时间和底线, 把选择权拿回自己手里。",
+            "risk": "关系短期会有张力, 对方可能感觉被拒绝, 需要你承受一点尴尬。",
+            "advantage": "长期最省心, 能筛掉消耗型关系, 避免被反复越界。",
+            "tone": "客气但坚定",
+            "recommended": false
+          }
+        ],
+        "transcript": [
+          {
+            "sender": "好友",
+            "text": "在吗",
+            "is_me": false
+          }
+        ],
+        "note": "",
+        "confidence_pct": 75
+      }
+    }
+  ]
+}

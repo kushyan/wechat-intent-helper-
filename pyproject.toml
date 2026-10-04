@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wechat-intent"
+version = "0.1.0"
+description = "WeChat friend intent recognition + 3 reply suggestions with reason/risk/advantage"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+wechatferry = ["wcferry>=39.3.3"]
+
+[project.scripts]
+wechat-intent = "wechat_intent.cli:main"
+
+[tool.setuptools]
+packages = ["wechat_intent", "wechat_intent.adapters"]
+
+[tool.setuptools.package-data]
+wechat_intent = ["web/*.html"]

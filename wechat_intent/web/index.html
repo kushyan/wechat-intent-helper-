@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>微信意图助手</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --line: #e2e5ea;
+    --line-strong: #cfd4dc;
+    --text: #171d2b;
+    --muted: #6a7280;
+    --accent: #0f766e;
+    --accent-soft: #e6f2f0;
+    --reason: #1d4ed8;
+    --reason-soft: #eaeffd;
+    --risk: #b45309;
+    --risk-soft: #fdf1e3;
+    --adv: #15803d;
+    --adv-soft: #e8f5ec;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC",
+      -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .app { display: flex; flex-direction: column; height: 100vh; }
+  header.bar {
+    display: flex; align-items: center; gap: 16px;
+    padding: 10px 20px; background: var(--surface);
+    border-bottom: 1px solid var(--line); flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: center; gap: 9px; font-weight: 650; font-size: 15px; }
+  .brand svg { color: var(--accent); }
+  .status {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--muted);
+    border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #94a3b8; }
+  .dot.on { background: var(--accent); }
+  .spacer { flex: 1; }
+  .field { display: flex; align-items: center; gap: 8px; }
+  .field label { font-size: 12px; color: var(--muted); }
+  input.contact, textarea {
+    font-family: inherit; font-size: 14px; color: var(--text);
+    background: var(--surface); border: 1px solid var(--line-strong);
+    border-radius: var(--radius); padding: 6px 10px; outline: none;
+  }
+  input.contact { width: 110px; }
+  input.contact:focus, textarea:focus { border-color: var(--accent); }
+  .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; }
+  .seg button {
+    font: inherit; font-size: 12px; padding: 5px 12px; border: 0;
+    background: var(--surface); color: var(--muted); cursor: pointer;
+  }
+  .seg button + button { border-left: 1px solid var(--line-strong); }
+  .seg button.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  main { display: flex; flex: 1; min-height: 0; }
+  .pane { display: flex; flex-direction: column; min-height: 0; }
+  .pane.in { flex: 0 0 380px; border-right: 1px solid var(--line); background: var(--surface); }
+  .pane.out { flex: 1; min-width: 0; }
+  .pane-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 18px; border-bottom: 1px solid var(--line);
+    font-size: 12px; color: var(--muted);
+  }
+  .pane-head .title { font-weight: 600; color: var(--text); font-size: 13px; }
+  .pane-body { flex: 1; min-height: 0; overflow-y: auto; }
+  .pane.in .pane-body { display: flex; flex-direction: column; gap: 10px; padding: 14px 18px 18px; }
+  textarea#chat { flex: 1; min-height: 200px; resize: none; line-height: 1.7; }
+  .hint { font-size: 12px; color: var(--muted); }
+  .actions { display: flex; gap: 8px; }
+  button.btn {
+    display: inline-flex; align-items: center; gap: 6px; justify-content: center;
+    font: inherit; font-size: 13px; padding: 8px 14px; border-radius: var(--radius);
+    border: 1px solid var(--line-strong); background: var(--surface); color: var(--text);
+    cursor: pointer;
+  }
+  button.btn:hover { border-color: #aab2be; }
+  button.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; flex: 1; }
+  button.btn.primary:hover { background: #0d6a63; }
+  button.btn:disabled { opacity: .55; cursor: default; }
+  .results { padding: 16px 18px 40px; display: flex; flex-direction: column; gap: 14px; max-width: 900px; }
+  .readout { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+  .readout-top { padding: 14px 16px 12px; border-bottom: 1px solid var(--line); }
+  .row1 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .intent-name { font-size: 18px; font-weight: 700; }
+  .badge {
+    font-size: 11px; padding: 2px 8px; border-radius: 999px;
+    background: #eef1f5; color: #4b5563; border: 1px solid var(--line);
+  }
+  .badge.accent { background: var(--accent-soft); color: var(--accent); border-color: #bcdcd8; }
+  .badge.risk { background: var(--risk-soft); color: var(--risk); border-color: #f0d3ac; }
+  .conf { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+  .conf .bar { flex: 1; max-width: 260px; height: 5px; background: #eceff3; border-radius: 999px; overflow: hidden; }
+  .conf .bar i { display: block; height: 100%; background: var(--accent); }
+  .conf span { font-size: 12px; color: var(--muted); }
+  dl.meta { margin: 0; padding: 12px 16px; display: grid; grid-template-columns: 74px 1fr; gap: 6px 12px; font-size: 13px; }
+  dl.meta dt { color: var(--muted); font-size: 12px; padding-top: 2px; }
+  dl.meta dd { margin: 0; }
+  .signals { padding: 0 16px 14px; }
+  .signals .label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 12px; padding: 3px 9px; border-radius: 6px; background: #f1f3f6; border: 1px solid var(--line); color: #45505f; }
+  .reply { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+  .reply.picked { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .reply-head {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    padding: 9px 14px; border-bottom: 1px solid var(--line); background: #fafbfc;
+  }
+  .reply-head .name { font-weight: 600; font-size: 13px; }
+  .reply-head .tone { font-size: 12px; color: var(--muted); }
+  .iconbtn {
+    display: inline-flex; align-items: center; gap: 5px;
+    font: inherit; font-size: 12px; color: var(--muted);
+    background: transparent; border: 1px solid var(--line-strong);
+    border-radius: 6px; padding: 4px 9px; cursor: pointer;
+  }
+  .iconbtn:hover { color: var(--text); border-color: #aab2be; }
+  .iconbtn.active { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+  .bubble { padding: 14px 16px 4px; font-size: 14.5px; line-height: 1.75; }
+  .why { padding: 6px 16px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .why .item { display: grid; grid-template-columns: 58px 1fr; gap: 10px; align-items: start; }
+  .why .tag { font-size: 11px; font-weight: 600; text-align: center; padding: 2px 0; border-radius: 5px; }
+  .tag.reason { color: var(--reason); background: var(--reason-soft); }
+  .tag.risk { color: var(--risk); background: var(--risk-soft); }
+  .tag.adv { color: var(--adv); background: var(--adv-soft); }
+  .why .txt { font-size: 13px; color: #37404f; }
+  .empty { padding: 60px 24px; text-align: center; color: var(--muted); }
+  .empty svg { color: #c3c9d2; margin-bottom: 10px; }
+  .empty p { margin: 4px 0; font-size: 13px; }
+  .err { margin: 16px 18px; padding: 10px 14px; border-radius: var(--radius);
+         background: var(--risk-soft); color: var(--risk); font-size: 13px; border: 1px solid #f0d3ac; }
+  .foot { padding: 12px 18px 28px; font-size: 12px; color: var(--muted); max-width: 900px; }
+  @media (max-width: 900px) {
+    main { flex-direction: column; }
+    .pane.in { flex: 0 0 auto; border-right: 0; border-bottom: 1px solid var(--line); }
+    .pane.in .pane-body { max-height: 42vh; }
+    textarea#chat { min-height: 140px; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <div class="brand">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+      微信意图助手
+    </div>
+    <span class="status"><i class="dot" id="dot"></i><span id="mode">检测中</span></span>
+    <div class="spacer"></div>
+    <div class="field">
+      <label for="contact">好友备注</label>
+      <input class="contact" id="contact" value="小雨" />
+    </div>
+    <div class="seg" id="engine">
+      <button data-force="auto" class="active">自动</button>
+      <button data-force="offline">离线</button>
+    </div>
+  </header>
+  <main>
+    <section class="pane in">
+      <div class="pane-head">
+        <span class="title">对话输入</span>
+        <span class="spacer"></span>
+        <span>每条一行</span>
+      </div>
+      <div class="pane-body">
+        <textarea id="chat" spellcheck="false"></textarea>
+        <div class="hint">「好友: 内容」标出对方说的，「我: 内容」标出你说的。没有前缀就按对方消息处理。</div>
+        <div class="actions">
+          <button class="btn primary" id="run">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>
+            分析意图
+          </button>
+          <button class="btn" id="demo">示例</button>
+          <button class="btn" id="clear">清空</button>
+        </div>
+      </div>
+    </section>
+    <section class="pane out">
+      <div class="pane-head">
+        <span class="title">意图判读与回复建议</span>
+        <span class="spacer"></span>
+        <span id="engineTag"></span>
+      </div>
+      <div class="pane-body" id="out">
+        <div class="empty">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/>
+            <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/>
+          </svg>
+          <p>把好友刚发来的消息贴到左边，点「分析意图」。</p>
+          <p>会给出意图判读，以及三条不同打法的回复，每条都写明理由、风险和优势。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const out = $("out");
+let force = "auto";
+
+const DEMO = [
+  "小雨: 在吗",
+  "小雨: 最近真的好累，感觉快撑不住了",
+  "我: 怎么了",
+  "小雨: 项目被砍了，我做了三个月的东西全白费",
+  "小雨: 你能陪我说说话吗"
+].join("\n");
+
+function esc(value) {
+  const map = { "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;" };
+  return String(value == null ? "" : value).replace(/[&<>"]/g, (c) => map[c]);
+}
+
+async function health() {
+  try {
+    const res = await fetch("/api/health");
+    const data = await res.json();
+    $("dot").classList.toggle("on", !!data.llm_ready);
+    $("mode").textContent = data.llm_ready ? ("模型 " + data.model) : "离线规则引擎";
+  } catch (err) {
+    $("mode").textContent = "服务未连接";
+  }
+}
+
+async function run() {
+  const text = $("chat").value.trim();
+  const contact = $("contact").value.trim() || "好友";
+  if (!text) { return; }
+  $("run").disabled = true;
+  try {
+    const res = await fetch("/api/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: text, contact: contact, force: force })
+    });
+    const data = await res.json();
+    if (data.error) {
+      out.innerHTML = '<div class="err">' + esc(data.error) + "</div>";
+      return;
+    }
+    render(data);
+  } catch (err) {
+    out.innerHTML = '<div class="err">请求失败：' + esc(err.message) + "</div>";
+  } finally {
+    $("run").disabled = false;
+  }
+}
+
+function reasonRow(kind, label, text) {
+  return '<div class="item"><span class="tag ' + kind + '">' + label +
+    '</span><span class="txt">' + esc(text) + "</span></div>";
+}
+
+function replyCard(reply, index) {
+  const badge = reply.recommended ? '<span class="badge accent">推荐</span>' : "";
+  return [
+    '<article class="reply" data-i="' + index + '">',
+    '  <div class="reply-head">',
+    '    <span class="name">' + esc(reply.strategy_label) + "</span>" + badge,
+    '    <span class="tone">' + esc(reply.tone) + "</span>",
+    '    <span class="spacer"></span>',
+    '    <button class="iconbtn pick" data-i="' + index + '">',
+    '      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"',
+    '           stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>用这条',
+    "    </button>",
+    '    <button class="iconbtn copy" data-i="' + index + '">',
+    '      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"',
+    '           stroke-linecap="round" stroke-linejoin="round">',
+    '        <rect x="9" y="9" width="13" height="13" rx="2"/>',
+    '        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>复制',
+    "    </button>",
+    "  </div>",
+    '  <div class="bubble">' + esc(reply.text) + "</div>",
+    '  <div class="why">',
+    reasonRow("reason", "理由", reply.reason),
+    reasonRow("risk", "风险", reply.risk),
+    reasonRow("adv", "优势", reply.advantage),
+    "  </div>",
+    "</article>"
+  ].join("\n");
+}
+
+function render(data) {
+  $("engineTag").textContent = data.engine === "llm" ? "模型生成" : "离线规则";
+  const pct = Math.round(data.confidence * 100);
+  const note = data.note ? '<div class="err" style="margin:0 0 14px">' + esc(data.note) + "</div>" : "";
+  const signals = (data.signals || []).map(function (s) {
+    return '<span class="chip">' + esc(s) + "</span>";
+  }).join("");
+  const cards = (data.replies || []).map(replyCard).join("\n");
+  const urgencyClass = data.urgency === "高" ? "badge risk" : "badge";
+
+  out.innerHTML = [
+    '<div class="results">',
+    note,
+    '  <div class="readout">',
+    '    <div class="readout-top">',
+    '      <div class="row1">',
+    '        <span class="intent-name">' + esc(data.intent_label) + "</span>",
+    '        <span class="badge">情绪 ' + esc(data.emotion_label) + "</span>",
+    '        <span class="' + urgencyClass + '">紧急度 ' + esc(data.urgency) + "</span>",
+    "      </div>",
+    '      <div class="conf"><span>置信度 ' + pct + '%</span>',
+    '        <span class="bar"><i style="width:' + pct + '%"></i></span></div>',
+    "    </div>",
+    '    <dl class="meta">',
+    "      <dt>对方意图</dt><dd>" + esc(data.read) + "</dd>",
+    "      <dt>对方想要</dt><dd>" + esc(data.goal) + "</dd>",
+    "      <dt>建议</dt><dd>" + esc(data.advice) + "</dd>",
+    "    </dl>",
+    '    <div class="signals"><div class="label">判读依据</div>',
+    '      <div class="chips">' + signals + "</div></div>",
+    "  </div>",
+    cards,
+    '  <div class="foot">建议只作参考，发不发、怎么发由你决定。程序不会自动回复任何人。</div>',
+    "</div>"
+  ].join("\n");
+
+  out.querySelectorAll(".copy").forEach(function (button) {
+    button.addEventListener("click", async function () {
+      const reply = data.replies[Number(button.dataset.i)];
+      try {
+        await navigator.clipboard.writeText(reply.text);
+        button.classList.add("active");
+        setTimeout(function () { button.classList.remove("active"); }, 1200);
+      } catch (err) { /* 剪贴板不可用时忽略 */ }
+    });
+  });
+
+  out.querySelectorAll(".pick").forEach(function (button) {
+    button.addEventListener("click", function () {
+      out.querySelectorAll(".reply").forEach(function (el) { el.classList.remove("picked"); });
+      out.querySelectorAll(".pick").forEach(function (el) { el.classList.remove("active"); });
+      const index = Number(button.dataset.i);
+      out.querySelector('.reply[data-i="' + index + '"]').classList.add("picked");
+      button.classList.add("active");
+      fetch("/api/select", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ index: index, strategy: data.replies[index].strategy, intent: data.intent_key })
+      }).catch(function () {});
+    });
+  });
+}
+
+$("run").addEventListener("click", run);
+$("clear").addEventListener("click", function () { $("chat").value = ""; $("chat").focus(); });
+$("demo").addEventListener("click", function () {
+  $("contact").value = "小雨";
+  $("chat").value = DEMO;
+  run();
+});
+$("engine").addEventListener("click", function (event) {
+  const button = event.target.closest("button");
+  if (!button) { return; }
+  force = button.dataset.force;
+  $("engine").querySelectorAll("button").forEach(function (el) {
+    el.classList.toggle("active", el === button);
+  });
+});
+document.addEventListener("keydown", function (event) {
+  if ((event.ctrlKey || event.metaKey) && event.key === "Enter") { run(); }
+});
+
+$("chat").value = DEMO;
+health();
+run();
+</script>
+</body>
+</html>

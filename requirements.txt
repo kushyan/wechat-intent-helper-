@@ -1,0 +1,7 @@
+# 核心运行时零第三方依赖, 只用 Python 标准库.
+#
+# 可选: 接入真实微信(Windows, 需先安装并登录 PC 微信)
+#   pip install wcferry
+#
+# 可选: 使用 Wechaty 网关时, 本项目只提供 HTTP 接口, 网关侧自行安装
+#   npm install wechaty wechaty-puppet-wechat4u

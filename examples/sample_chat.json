@@ -1,0 +1,10 @@
+{
+  "contact": "小雨",
+  "messages": [
+    { "sender": "小雨", "text": "在吗" },
+    { "sender": "小雨", "text": "最近真的好累，感觉快撑不住了" },
+    { "sender": "我", "text": "怎么了", "is_me": true },
+    { "sender": "小雨", "text": "项目被砍了，我做了三个月的东西全白费" },
+    { "sender": "小雨", "text": "你能陪我说说话吗" }
+  ]
+}
